@@ -29,7 +29,7 @@ void swap(int& x, int& y)
     y = temp;
 }
 
-void reverse(vector<int>& a, int i, int j) 
+void back(vector<int>& a, int i, int j) 
 {
     while (i < j) 
     {
@@ -50,7 +50,7 @@ bool next_permutation(vector<int>& a)
                 j--;
             }
             swap(a[i - 1], a[j]);
-            reverse(a, i, a.size() - 1);
+            back(a, i, a.size() - 1);
             return true;
         }
     }
@@ -78,7 +78,7 @@ void generate_permutations(const string& s)
     } 
       while (next_permutation(indices));
 
-    for (const string& p : unique_perms)
+    for (const string& p : other_perms)
       {
         cout << p << endl;
       }
@@ -89,7 +89,7 @@ int main() {
     cout << "Enter a string: ";
     cin >> s;
 
-    cout << "\nAll unique permutations:\n";
+    cout << "\nAll other permutations:\n";
     generate_permutations(s);
 
     return 0;
